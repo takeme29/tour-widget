@@ -71,8 +71,8 @@ class My_Widget extends WP_Widget{
 	 */
 	public function widget( $args, $instance ) {
     global $uri;
-    $team_img = $instance[' recipe_img'];
-    $team_name = $instance['recipe_name'];
+    $recipe_img = $instance['recipe_img'];
+    $recipe_name = $instance['recipe_name'];
 		echo $args['before_widget'];
 
         echo '<img width="270" height="270" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/></a> ';
@@ -92,13 +92,13 @@ class My_Widget extends WP_Widget{
      * @return string|void
      */
     public function form( $instance ){
-        $team_img = @$instance['recipe_img'];
-        $team_img_name = $this->get_field_name('recipe_img');
-        $team_img_id = $this->get_field_id('recipe_img');
+        $recipe_img = @$instance['recipe_img'];
+        $recipe_img_name = $this->get_field_name('recipe_img');
+        $recipe_img_id = $this->get_field_id('recipe_img');
 
-        $team_name = @$instance['recipe_name'];
-        $team_name_name = $this->get_field_name('recipe_name');
-        $team_name_id = $this->get_field_id('recipe_name');
+        $recipe_name = @$instance['recipe_name'];
+        $recipe_name_name = $this->get_field_name('recipe_name');
+        $recipe_name_id = $this->get_field_id('recipe_name');
 
  ?>
         <p>
@@ -106,7 +106,7 @@ class My_Widget extends WP_Widget{
             <input class="widefat" id="<?php echo $recipe_img_id; ?>" name="<?php echo $recipe_img_name; ?>" type="text" value="<?php echo esc_attr( $recipe_img ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_name_id; ?>">料理名:</label>
+            <label for="<?php echo $recipe_name_id; ?>">料理名:</label>
             <input class="widefat" id="<?php echo $recipe_name_id; ?>" name="<?php echo $recipe_name_name; ?>" type="text" value="<?php echo esc_attr( $recipe_name ); ?>">
         </p>
        
