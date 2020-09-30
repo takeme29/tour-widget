@@ -58,8 +58,8 @@ class My_Widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'my_widget', // Base ID
-			'スタッフ画像', // Name
-			array( 'description' => 'スタッフの紹介', ) // Args
+			'料理画像', // Name
+			array( 'description' => 'レシピ紹介', ) // Args
 		);
 	}
 
@@ -71,14 +71,14 @@ class My_Widget extends WP_Widget{
 	 */
 	public function widget( $args, $instance ) {
     global $uri;
-    $team_img = $instance['team_img'];
-    $team_name = $instance['team_name'];
+    $team_img = $instance[' recipe_img'];
+    $team_name = $instance['recipe_name'];
 		echo $args['before_widget'];
 
-        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$team_img,'" alt=""/></a> ';
+        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/></a> ';
         echo '
         <div class="thumbnail-desc">
-        <h5 class="thumbnail-josip-title text-bold text-white">',$team_name,'</h5>
+        <h5 class="thumbnail-josip-title text-bold text-white">',$recipe_name,'</h5>
       </div>
       <figcaption><a class="btn-java btn btn-block btn-rect text-lg-left" href="team-member.html">view full profile</a></figcaption>
      ';
@@ -92,22 +92,22 @@ class My_Widget extends WP_Widget{
      * @return string|void
      */
     public function form( $instance ){
-        $team_img = @$instance['team_img'];
-        $team_img_name = $this->get_field_name('team_img');
-        $team_img_id = $this->get_field_id('team_img');
+        $team_img = @$instance['recipe_img'];
+        $team_img_name = $this->get_field_name('recipe_img');
+        $team_img_id = $this->get_field_id('recipe_img');
 
-        $team_name = @$instance['team_name'];
-        $team_name_name = $this->get_field_name('team_name');
-        $team_name_id = $this->get_field_id('team_name');
+        $team_name = @$instance['recipe_name'];
+        $team_name_name = $this->get_field_name('recipe_name');
+        $team_name_id = $this->get_field_id('recipe_name');
 
  ?>
         <p>
-            <label for="<?php echo $team_img_id; ?>">スタッフ顔写真:</label>
-            <input class="widefat" id="<?php echo $team_img_id; ?>" name="<?php echo $team_img_name; ?>" type="text" value="<?php echo esc_attr( $team_img ); ?>">
+            <label for="<?php echo $recipe_img_id; ?>">料理写真:</label>
+            <input class="widefat" id="<?php echo $recipe_img_id; ?>" name="<?php echo $recipe_img_name; ?>" type="text" value="<?php echo esc_attr( $recipe_img ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_name_id; ?>">スタッフ名:</label>
-            <input class="widefat" id="<?php echo $team_name_id; ?>" name="<?php echo $team_name_name; ?>" type="text" value="<?php echo esc_attr( $team_name ); ?>">
+            <label for="<?php echo $team_name_id; ?>">料理名:</label>
+            <input class="widefat" id="<?php echo $recipe_name_id; ?>" name="<?php echo $recipe_name_name; ?>" type="text" value="<?php echo esc_attr( $recipe_name ); ?>">
         </p>
        
  <?php
@@ -121,8 +121,8 @@ class My_Widget extends WP_Widget{
      * @return array               保存（更新）する設定データ。falseを返すと更新しない。
      */
     function update($new_instance, $old_instance) {
-        if(empty($new_instance['team_img']) 
-        || empty($new_instance['team_name'])){
+        if(empty($new_instance['recipe_img']) 
+        || empty($new_instance['recipe_name'])){
             return false;
         }
         return $new_instance;
