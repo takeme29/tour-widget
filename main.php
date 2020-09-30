@@ -15,7 +15,7 @@ $dir = get_template_directory();
 add_action( 'widgets_init', function () {
 	register_widget( 'My_Widget' );  //WidgetをWordPressに登録する
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 1',
+		'name'          => 'recipe 1',
 		'id'            => 'my_sidebar_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -23,7 +23,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 2',
+		'name'          => 'recipe 2',
 		'id'            => 'my_sidebar_2',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -31,7 +31,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 3',
+		'name'          => 'recipe 3',
 		'id'            => 'my_sidebar_3',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -39,7 +39,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 4',
+		'name'          => 'recipe 4',
 		'id'            => 'my_sidebar_4',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
