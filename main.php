@@ -74,14 +74,15 @@ class My_Widget extends WP_Widget{
     $recipe_img = $instance['recipe_img'];
     $recipe_name = $instance['recipe_name'];
     $recipe_text = $instance['recipe_text'];
+    $recipe_url = $instance['recipe_url'];
 		echo $args['before_widget'];
 
-        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/></a> ';
+        echo '<a href="',$recipe_url,'"><img width="270" height="270" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/>';
         echo '
         <div class="thumbnail-desc">
         <h5 class="thumbnail-josip-title text-bold text-white">',$recipe_name,'</h5>
         <p>',$recipe_text,'</p>
-      </div>
+      </div></a>
       <figcaption><a class="btn-java btn btn-block btn-rect text-lg-left" href="team-member.html">view full profile</a></figcaption>
      ';
 
@@ -106,6 +107,10 @@ class My_Widget extends WP_Widget{
         $recipe_text_name = $this->get_field_name('recipe_text');
         $recipe_text_id = $this->get_field_id('recipe_text');
 
+        $recipe_url = @$instance['recipe_url'];
+        $recipe_url_name = $this->get_field_name('recipe_url');
+        $recipe_url_id = $this->get_field_id('recipe_url');
+
  ?>
         <p>
             <label for="<?php echo $recipe_img_id; ?>">料理写真:</label>
@@ -118,6 +123,10 @@ class My_Widget extends WP_Widget{
         <p>
             <label for="<?php echo $recipe_text_id; ?>">説明分:</label>
             <input class="widefat" id="<?php echo $recipe_text_id; ?>" name="<?php echo $recipe_text_name; ?>" type="text" value="<?php echo esc_attr( $recipe_text ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo $recipe_text_id; ?>">URL:</label>
+            <input class="widefat" id="<?php echo $recipe_url_id; ?>" name="<?php echo $recipe_url_name; ?>" type="text" value="<?php echo esc_attr( $recipe_url ); ?>">
         </p>
        
  <?php
@@ -133,7 +142,8 @@ class My_Widget extends WP_Widget{
     function update($new_instance, $old_instance) {
         if(empty($new_instance['recipe_img']) 
         || empty($new_instance['recipe_name'])
-        || empty($new_instance['recipe_text'])){
+        || empty($new_instance['recipe_text'])
+        || empty($new_instance['recipe_url'])){
             return false;
         }
         return $new_instance;
