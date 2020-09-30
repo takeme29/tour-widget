@@ -48,7 +48,6 @@ add_action( 'widgets_init', function () {
 	) );
 } );
 
-
 //カスタムウィジェット
 class My_Widget extends WP_Widget{
 	/**
