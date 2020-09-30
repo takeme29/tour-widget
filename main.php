@@ -17,7 +17,7 @@ add_action( 'widgets_init', function () {
   register_sidebar( array(  //「サイドバー」を登録する
 		'name'          => 'recipe 1',
 		'id'            => 'my_sidebar_1',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="recipe">',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
@@ -25,7 +25,7 @@ add_action( 'widgets_init', function () {
   register_sidebar( array(  //「サイドバー」を登録する
 		'name'          => 'recipe 2',
 		'id'            => 'my_sidebar_2',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="recipe">',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
@@ -33,7 +33,7 @@ add_action( 'widgets_init', function () {
   register_sidebar( array(  //「サイドバー」を登録する
 		'name'          => 'recipe 3',
 		'id'            => 'my_sidebar_3',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="recipe">',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
@@ -41,7 +41,7 @@ add_action( 'widgets_init', function () {
   register_sidebar( array(  //「サイドバー」を登録する
 		'name'          => 'recipe 4',
 		'id'            => 'my_sidebar_4',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="recipe">',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
