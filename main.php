@@ -77,13 +77,13 @@ class My_Widget extends WP_Widget{
     $recipe_url = $instance['recipe_url'];
 		echo $args['before_widget'];
 
-        echo '<a href="',$recipe_url,'"><img width="270" height="270" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/>';
+        echo '<a href="',$recipe_url,'"><img width="270" height="180" src="',$uri,'/images/pages/',$recipe_img,'" alt=""/>';
         echo '
         <div class="thumbnail-desc">
         <h5 class="thumbnail-josip-title text-bold text-white">',$recipe_name,'</h5>
         <p>',$recipe_text,'</p>
       </div></a>
-      <figcaption><a class="btn-java btn btn-block btn-rect text-lg-left" href="team-member.html">view full profile</a></figcaption>
+      <figcaption><a class="btn-java btn btn-block btn-rect text-lg-left" href="team-member.html"></a></figcaption>
      ';
 
         echo $args['after_widget'];
